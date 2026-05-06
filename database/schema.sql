@@ -1,5 +1,5 @@
-CREATE DATABASE IF NOT EXISTS jsonplaceholder_db;
-USE jsonplaceholder_db;
+CREATE DATABASE IF NOT EXISTS project_db;
+USE project_db;
 
 CREATE TABLE users (
   id INT AUTO_INCREMENT PRIMARY KEY,
