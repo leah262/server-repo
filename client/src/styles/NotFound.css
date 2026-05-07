@@ -1,0 +1,87 @@
+:root {
+  /* Ensure variables are available if not imported globally */
+  --c-teal: #78C0A8;
+  --c-yellow: #FCE38A;
+  --c-orange: #F38181;
+  --c-blue: #95E1D3;
+  --c-text: #2D3436;
+  --c-bg: #F9F7F2;
+  --c-white: #FFFFFF;
+  --border-width: 2px;
+  --radius: 12px;
+  --shadow-hard: 4px 4px 0px var(--c-text);
+}
+
+.not-found-page {
+  min-height: 100vh;
+  background-color: var(--c-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.not-found-container {
+  background: var(--c-white);
+  border: var(--border-width) solid var(--c-text);
+  border-radius: var(--radius);
+  padding: 3rem 2rem;
+  text-align: center;
+  box-shadow: 8px 8px 0px var(--c-text); /* Extra hard shadow */
+  max-width: 500px;
+  width: 100%;
+  position: relative;
+}
+
+.error-code {
+  font-size: 8rem;
+  font-weight: 900;
+  color: var(--c-yellow);
+  /* Create a text outline effect */
+  -webkit-text-stroke: 3px var(--c-text);
+  text-shadow: 4px 4px 0px var(--c-text);
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+
+.not-found-container h1 {
+  color: var(--c-text);
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 800;
+}
+
+.not-found-container p {
+  color: #666;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  font-weight: 600;
+}
+
+.home-btn {
+  background-color: var(--c-teal);
+  color: white;
+  border: var(--border-width) solid var(--c-text);
+  padding: 15px 30px;
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: 700;
+  box-shadow: var(--shadow-hard);
+  transition: all 0.2s;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.home-btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px var(--c-text);
+  background-color: #64a890;
+}
+
+.home-btn:active {
+  transform: translate(0, 0);
+  box-shadow: 0px 0px 0px var(--c-text);
+}

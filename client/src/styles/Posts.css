@@ -1,0 +1,171 @@
+/* Keep your existing layout styles... */
+.posts-container {
+  max-width: 1000px; /* Made slightly wider to accommodate content */
+  margin: 0 auto;
+  padding-bottom: 4rem;
+}
+
+.posts-layout {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+@media (max-width: 768px) {
+  .posts-layout { flex-direction: column; }
+  .control-panel { width: 100%; }
+}
+
+/* --- CONTROL PANEL & SEARCH FIX --- */
+.control-panel {
+  flex: 1;
+  min-width: 300px;
+  background: var(--c-blue);
+  padding: 1.5rem;
+  border: var(--border-width) solid var(--c-text);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-hard);
+  position: sticky;
+  top: 100px;
+}
+
+/* Specific styling to make search wide and clean */
+.search-container {
+  display: flex;
+  flex-direction: column; /* Stack items so they take full width */
+  gap: 12px;
+  margin-bottom: 1.5rem;
+  width: 100%;
+}
+
+.search-container select,
+.search-container input {
+  width: 100%; /* Force full width */
+  padding: 12px 15px;
+  font-size: 1rem;
+  border: 2px solid var(--c-text);
+  border-radius: 8px;
+  background: white;
+  height: 48px; /* Fixed height for better touch targets */
+  box-sizing: border-box;
+}
+
+.search-container input:focus,
+.search-container select:focus {
+  box-shadow: 4px 4px 0 var(--c-text);
+  transform: translate(-2px, -2px);
+  outline: none;
+}
+
+.add-btn {
+  width: 100%; /* Make button full width too */
+  padding: 12px;
+  margin-top: 10px;
+  font-size: 1rem;
+}
+
+/* --- POST CARDS --- */
+.posts-display {
+  flex: 2; /* Gives posts more space than controls */
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.post-card {
+  background: var(--c-white);
+  border: var(--border-width) solid var(--c-text);
+  border-radius: var(--radius);
+  padding: 0;
+  overflow: hidden;
+  box-shadow: var(--shadow-hard);
+  transition: transform 0.2s;
+}
+
+.post-card:hover {
+  transform: translate(-2px, -2px);
+}
+
+.post-header {
+  padding: 1rem;
+  background: #f1f1f1;
+  border-bottom: var(--border-width) solid var(--c-text);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.user-avatar {
+  background-color: var(--c-yellow);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 2px solid var(--c-text);
+  font-weight: 700;
+}
+
+.post-title {
+  padding: 1rem 1.5rem 0.5rem 1.5rem;
+  margin: 0;
+  font-size: 1.4rem;
+  color: var(--c-text);
+  cursor: pointer;
+  font-weight: 800;
+}
+
+.post-title:hover {
+  color: var(--c-teal);
+  text-decoration: underline;
+}
+
+.post-details {
+  padding: 0 1.5rem 1.5rem 1.5rem;
+}
+
+.post-body {
+  color: #4a4a4a;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+/* Comments Section */
+.comments-toggle {
+  background: transparent;
+  color: var(--c-text);
+  border: 2px solid var(--c-text);
+  box-shadow: none;
+  font-size: 0.8rem;
+  padding: 5px 10px;
+}
+
+.comments-toggle:hover {
+  background: var(--c-yellow);
+  transform: none;
+  box-shadow: 2px 2px 0 var(--c-text);
+}
+
+.comments-section {
+  background: #f8f9fa;
+  border: 2px dashed #ccc;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+.comment {
+  background: white;
+  border: 1px solid #ddd;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 0.8rem;
+  border-left: 5px solid var(--c-yellow);
+  box-shadow: 2px 2px 0 #eee;
+}
+
+.comment-header strong {
+  color: var(--c-teal);
+}

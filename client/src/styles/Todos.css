@@ -1,0 +1,63 @@
+.todos-container {
+  max-width: 800px !important;
+  background: #fffbe6 !important; /* Yellow Legal Pad look */
+  background-image: linear-gradient(#e0d6ff 1px, transparent 1px);
+  background-size: 100% 2rem;
+}
+
+.todos-sticky-header {
+  background: #fffbe6;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--c-text);
+  margin-bottom: 1rem;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem;
+  background: white;
+  margin-bottom: 0.8rem;
+  border: var(--border-width) solid var(--c-text);
+  border-radius: 50px; /* Pill shape */
+  box-shadow: 2px 2px 0 var(--c-text);
+}
+
+.todo-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex: 1;
+}
+
+/* Custom Checkbox */
+input[type="checkbox"] {
+  width: 24px;
+  height: 24px;
+  accent-color: var(--c-teal);
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.todo-title {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.todo-title.completed {
+  text-decoration: line-through;
+  color: #aaa;
+  font-style: italic;
+}
+
+.todo-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-right: 5px;
+}
+
+.todo-actions button {
+  padding: 5px 10px;
+  font-size: 0.8rem;
+}

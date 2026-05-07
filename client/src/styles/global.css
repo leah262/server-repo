@@ -1,0 +1,84 @@
+:root {
+  /* Logo Palette */
+  --c-teal: #78C0A8;
+  --c-yellow: #FCE38A;
+  --c-orange: #F38181;
+  --c-blue: #95E1D3;
+  --c-text: #2D3436;
+  --c-bg: #F9F7F2; /* Creamy off-white */
+  --c-white: #FFFFFF;
+  
+  /* Design Tokens */
+  --border-width: 2px;
+  --radius: 12px;
+  --shadow-hard: 4px 4px 0px var(--c-text); /* The Block Look */
+  --shadow-hover: 2px 2px 0px var(--c-text);
+  --font-main: 'Nunito', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-main);
+  background-color: var(--c-bg);
+  color: var(--c-text);
+  line-height: 1.6;
+}
+
+/* Global Button Styles to match the Logo */
+button {
+  font-family: var(--font-main);
+  font-weight: 700;
+  border: var(--border-width) solid var(--c-text);
+  border-radius: var(--radius);
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  background-color: var(--c-white);
+  box-shadow: var(--shadow-hard);
+  transform: translate(-2px, -2px);
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+}
+
+button:active {
+  box-shadow: 0px 0px 0px var(--c-text);
+  transform: translate(0px, 0px);
+}
+
+button:disabled {
+  background-color: #e0e0e0;
+  color: #888;
+  box-shadow: none;
+  transform: none;
+  cursor: not-allowed;
+}
+
+/* Action Variants */
+.save-btn, .add-btn, .add-photo-btn { background-color: var(--c-teal); color: white; }
+.delete-btn, .cancel-btn { background-color: var(--c-orange); color: white; }
+.edit-btn { background-color: var(--c-yellow); color: var(--c-text); }
+.back-btn { background-color: var(--c-blue); color: var(--c-text); }
+
+/* Inputs */
+input, textarea, select {
+  width: 100%;
+  padding: 12px;
+  border: var(--border-width) solid var(--c-text);
+  border-radius: var(--radius);
+  font-family: var(--font-main);
+  background-color: var(--c-white);
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.2s;
+}
+
+input:focus, textarea:focus, select:focus {
+  box-shadow: var(--shadow-hard);
+  transform: translate(-2px, -2px);
+  border-color: var(--c-teal);
+}

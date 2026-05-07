@@ -1,0 +1,12 @@
+.sort-section {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.sort-section select {
+  width: auto;
+  border-color: var(--c-blue);
+}

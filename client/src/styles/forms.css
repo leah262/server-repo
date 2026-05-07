@@ -1,0 +1,48 @@
+.login-page, .register-page, .user-details-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: var(--c-teal); /* Full color bg for auth pages */
+  padding: 1rem;
+}
+
+.container {
+  background: var(--c-white);
+  padding: 2.5rem;
+  border-radius: var(--radius);
+  border: var(--border-width) solid var(--c-text);
+  box-shadow: 8px 8px 0 rgba(0,0,0,0.2);
+  width: 100%;
+  max-width: 450px;
+}
+
+.container h2 {
+  text-align: center;
+  color: var(--c-text);
+  margin-bottom: 1.5rem;
+  font-weight: 800;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.secondary-btn {
+  width: 100%;
+  margin-top: 1rem;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  text-decoration: underline;
+  text-transform: none;
+  transform: none;
+}
+
+.secondary-btn:hover {
+  color: var(--c-orange);
+  background: transparent;
+  transform: none;
+}
