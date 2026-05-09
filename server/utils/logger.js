@@ -15,7 +15,6 @@ class Logger {
     
     const logString = `[${timestamp}] ${level.toUpperCase()}: ${message} ${JSON.stringify(metadata)}\n`;
     
-    console.log(logString.trim());
     fs.appendFileSync(logFile, logString);
   }
 

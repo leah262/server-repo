@@ -52,25 +52,18 @@ class User {
   }
 
   static async updatePassword(userId, passwordHash) {
-    console.log('Updating password for userId:', userId);
-    console.log('New password hash (first 20 chars):', passwordHash?.substring(0, 20));
-    
+
     const result = await db.query(
       'UPDATE passwords SET password_hash = ? WHERE user_id = ?',
       [passwordHash, userId]
     );
-    
-    console.log('Database update result:', result);
     
     // Verify the update worked
     const [verifyRows] = await db.query(
       'SELECT password_hash FROM passwords WHERE user_id = ?',
       [userId]
     );
-    
-    console.log('Verification - stored hash (first 20 chars):', verifyRows[0]?.password_hash?.substring(0, 20));
-    console.log('Verification - matches new hash:', verifyRows[0]?.password_hash === passwordHash);
-    
+        
     return result;
   }
 

@@ -109,8 +109,6 @@ export const usersApi = {
   changePassword: (id, passwordData) => myChangep(id, passwordData)
 }
 function myChangep(id, passwordData) {
-  console.log("before api")
-  console.log(`id: ${id}, password: ${passwordData}`)
   return apiRequest(`/users/${id}/password`, {
     method: 'PUT',
     headers: { 'Content-Type': 'application/json' },

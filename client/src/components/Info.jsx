@@ -46,12 +46,10 @@ function Info() {
     }
 
     try {
-      console.log('Attempting password change for user:', user.id);
       const response = await usersApi.changePassword(user.id, {
         currentPassword: passwordData.currentPassword,
         newPassword: passwordData.newPassword
       });
-      console.log('Password change response:', response);
       
       setPasswordData({ currentPassword: '', newPassword: '', confirmPassword: '' });
       setShowPasswordChange(false);

@@ -20,3 +20,4 @@ Server is running on http://localhost:3000
 [2026-05-09T21:27:54.946Z] INFO: Todo created {"todoId":6,"userId":3}
 [2026-05-09T21:28:09.760Z] INFO: Todo updated {"todoId":"5","userId":3}
 [2026-05-09T21:28:37.944Z] INFO: Successful login {"userId":3,"username":"p"}
+[2026-05-09T22:06:00.714Z] INFO: Successful login {"userId":3,"username":"p"}

@@ -5,8 +5,6 @@ function ProtectedRoute({ children }) {
   const { userId } = useParams()
   const { user, loading } = useUser()
 
-  console.log('ProtectedRoute:', { user, userId, loading })
-
   if (loading) {
     return <div>Loading...</div>
   }

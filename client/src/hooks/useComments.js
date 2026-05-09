@@ -29,7 +29,6 @@ export const useComments = () => {
         postId,
         body: newComment
       })
-      console.log('Comment received from server:', comment)
       setComments([...comments, comment])
       setNewComment('')
     } catch (error) {
@@ -49,7 +48,6 @@ export const useComments = () => {
   const updateComment = async (commentId, newBody) => {
     try {
       const updated = await commentsApi.update(commentId, { body: newBody })
-      console.log('Updated comment from server:', updated)
       setComments(comments.map(c => c.id === commentId ? { ...c, ...updated } : c))
       setEditingComment(null)
     } catch (error) {

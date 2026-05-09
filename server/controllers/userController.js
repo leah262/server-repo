@@ -45,9 +45,7 @@ class UserController {
   }
 
   static async updatePassword(req, res) {
-    try {
-      console.log('Password change request:', { userId: req.params.id, body: req.body });
-      
+    try {      
       if (req.user.id !== parseInt(req.params.id)) {
         Logger.security('Unauthorized password change attempt', { 
           attemptedBy: req.user.id, 
@@ -59,13 +57,10 @@ class UserController {
       const { currentPassword, newPassword } = req.body;
       
       if (!currentPassword || !newPassword) {
-        console.log('Missing password fields');
         return res.status(400).json({ error: 'Current and new password required' });
       }
 
-      console.log('Fetching user:', req.user.username);
       const user = await User.findByUsername(req.user.username);
-      console.log('User found:', user ? 'yes' : 'no');
       
       if (!user) {
         return res.status(404).json({ error: 'User not found' });
@@ -77,9 +72,6 @@ class UserController {
       }
       
       const valid = await bcrypt.compare(currentPassword, user.password_hash);
-      console.log('Password valid:', valid);
-      console.log('Password hash stored (first 20 chars):', user.password_hash?.substring(0, 20));
-      console.log('Current password length:', currentPassword?.length);
       
       if (!valid) {
         Logger.security('Failed password change - incorrect current password', { 
@@ -92,7 +84,6 @@ class UserController {
       await User.updatePassword(req.params.id, newHash);
       
       Logger.info('Password changed successfully', { userId: req.params.id });
-      console.log('Password changed successfully');
       res.json({ message: 'Password updated successfully' });
     } catch (err) {
       console.error('Error in updatePassword:', err);
