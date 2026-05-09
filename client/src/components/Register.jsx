@@ -16,10 +16,10 @@ function Register() {
     e.preventDefault()
     const formData = new FormData(basicFormRef.current)
     const username = formData.get('username')
-    const website = formData.get('website')
-    const verifyWebsite = formData.get('verifyWebsite')
+    const password = formData.get('password')
+    const verifyPassword = formData.get('verifyPassword')
     
-    if (website !== verifyWebsite) {
+    if (password !== verifyPassword) {
       alert('Passwords do not match')
       return
     }
@@ -31,7 +31,7 @@ function Register() {
         return
       }
 
-      setBasicData({ username, website })
+      setBasicData({ username, password })
       setStep(2)
     } catch (error) {
       alert('Server error')
@@ -46,12 +46,12 @@ function Register() {
       username: basicData.username,
       name: formData.get('name'),
       email: formData.get('email'),
-      website: basicData.website
+      password: basicData.password
     }
 
     try {
       const createdUser = await usersApi.create(newUser)
-      const loginUser = await usersApi.login(basicData.username, basicData.website)
+      const loginUser = await usersApi.login(basicData.username, basicData.password)
       if (loginUser && loginUser.token) {
         login(loginUser)
         alert(`Registration completed successfully! User ID: ${createdUser.id}`)
@@ -87,15 +87,15 @@ function Register() {
               required
             />
             <input
-              type="text"
-              name="website"
-              placeholder="Website (Password)"
+              type="password"
+              name="password"
+              placeholder="Password"
               required
             />
             <input
-              type="text"
-              name="verifyWebsite"
-              placeholder="Confirm Website (Password)"
+              type="password"
+              name="verifyPassword"
+              placeholder="Confirm Password"
               required
             />
             <button type="submit">Next Step →</button>

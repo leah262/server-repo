@@ -100,7 +100,7 @@ export const usersApi = {
       name: user.name,
       username: user.username,
       email: user.email,
-      password: user.website
+      password: user.password
     })
   }),
   update: (id, userData) => apiRequest(`/users/${id}`, {
@@ -108,7 +108,7 @@ export const usersApi = {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(userData)
   }),
-  changePassword: (id, passwordData)=>myChangep(id, passwordData)
+  changePassword: (id, passwordData) => myChangep(id, passwordData)
 }
 function myChangep(id, passwordData) {
   console.log("before api")

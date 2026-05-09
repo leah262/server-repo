@@ -1,2 +1,8 @@
 ◇ injected env (6) from .env // tip: ⌘ multiple files { path: ['.env.local', '.env'] }
 Server is running on http://localhost:3000
+[2026-05-09T17:53:35.785Z] INFO: Successful login {"userId":4,"username":"leahr"}
+[2026-05-09T17:53:59.190Z] INFO: Password changed successfully {"userId":"4"}
+[2026-05-09T17:54:14.954Z] INFO: Successful login {"userId":4,"username":"leahr"}
+[2026-05-09T17:54:26.575Z] SECURITY: Failed login attempt - incorrect password {"username":"leahr","userId":4}
+[2026-05-09T17:54:34.478Z] INFO: Successful login {"userId":4,"username":"leahr"}
+[2026-05-09T17:54:48.900Z] INFO: Post updated {"postId":"5","userId":4}
