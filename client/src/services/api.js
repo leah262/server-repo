@@ -1,4 +1,4 @@
-const API_BASE = 'http://localhost:3000'
+const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:3000'
 
 const getToken = () => {
   const userStr = localStorage.getItem('user')
@@ -12,7 +12,6 @@ const getToken = () => {
 }
 
 const apiRequest = async (endpoint, options = {}) => {
-  console.log("before token")
   const token = getToken()
   if (token) {
     options.headers = {
@@ -20,7 +19,6 @@ const apiRequest = async (endpoint, options = {}) => {
       'Authorization': `Bearer ${token}`
     }
   }
-  console.log("after token")
   const response = await fetch(`${API_BASE}${endpoint}`, options)
   if (options.method === 'DELETE') return response
 
@@ -113,7 +111,7 @@ export const usersApi = {
 function myChangep(id, passwordData) {
   console.log("before api")
   console.log(`id: ${id}, password: ${passwordData}`)
-  apiRequest(`/users/${id}/password`, {
+  return apiRequest(`/users/${id}/password`, {
     method: 'PUT',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(passwordData)

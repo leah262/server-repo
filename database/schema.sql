@@ -29,7 +29,7 @@ CREATE TABLE comments (
   id INT AUTO_INCREMENT PRIMARY KEY,
   post_id INT NOT NULL,
   user_id INT NOT NULL,
-  name VARCHAR(100) NOT NULL,
+  -- name VARCHAR(100) NOT NULL,
   body TEXT NOT NULL,
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   FOREIGN KEY (post_id) REFERENCES posts(id) ON DELETE CASCADE,
@@ -59,12 +59,19 @@ INSERT INTO posts (user_id, title, body) VALUES
   (1, 'Another Post', 'More content here.'),
   (2, 'John Post', 'John wrote this post.');
 
-INSERT INTO comments (post_id, user_id, name, body) VALUES
-  (1, 2, 'John Doe', 'Great post!'),
-  (1, 1, 'Leah Cohen', 'Thanks!'),
-  (3, 1, 'Leah Cohen', 'Nice one John.');
+INSERT INTO comments (post_id, user_id, body) VALUES
+  (1, 2, 'Great post!'),
+  (1, 1, 'Thanks!'),
+  (3, 1, 'Nice one John.');
 
 INSERT INTO todos (user_id, title, completed) VALUES
   (1, 'Buy groceries', FALSE),
   (1, 'Read a book', TRUE),
   (2, 'Go for a run', FALSE);
+
+-- Add indexes for better query performance
+CREATE INDEX idx_posts_user_id ON posts(user_id);
+CREATE INDEX idx_comments_post_id ON comments(post_id);
+CREATE INDEX idx_comments_user_id ON comments(user_id);
+CREATE INDEX idx_todos_user_id ON todos(user_id);
+

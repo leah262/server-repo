@@ -46,10 +46,9 @@ class Comment {
 
   static async create(userId, commentData) {
     const { post_id, body } = commentData;
-    const [userRows] = await db.query('SELECT name FROM users WHERE id = ?', [userId]);
     const [result] = await db.query(
-      'INSERT INTO comments (post_id, user_id, name, body) VALUES (?, ?, ?, ?)',
-      [post_id, userId, userRows[0].name, body]
+      'INSERT INTO comments (post_id, user_id, body) VALUES (?, ?, ?)',
+      [post_id, userId, body]
     );
     return this.findById(result.insertId);
   }

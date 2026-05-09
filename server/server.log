@@ -6,3 +6,17 @@ Server is running on http://localhost:3000
 [2026-05-09T17:54:26.575Z] SECURITY: Failed login attempt - incorrect password {"username":"leahr","userId":4}
 [2026-05-09T17:54:34.478Z] INFO: Successful login {"userId":4,"username":"leahr"}
 [2026-05-09T17:54:48.900Z] INFO: Post updated {"postId":"5","userId":4}
+[2026-05-09T21:03:34.132Z] INFO: New user registered {"userId":3,"username":"p"}
+[2026-05-09T21:03:34.224Z] INFO: Successful login {"userId":3,"username":"p"}
+[2026-05-09T21:03:53.025Z] INFO: User updated {"userId":"3"}
+[2026-05-09T21:04:31.106Z] INFO: Password changed successfully {"userId":"3"}
+[2026-05-09T21:05:30.642Z] INFO: Post created {"postId":4,"userId":3}
+[2026-05-09T21:05:40.917Z] INFO: Post updated {"postId":"4","userId":3}
+[2026-05-09T21:05:48.494Z] INFO: Post updated {"postId":"4","userId":3}
+[2026-05-09T21:05:49.809Z] INFO: Post deleted {"postId":"4","userId":3}
+[2026-05-09T21:27:41.336Z] INFO: Todo created {"todoId":4,"userId":3}
+[2026-05-09T21:27:45.233Z] INFO: Todo created {"todoId":5,"userId":3}
+[2026-05-09T21:27:50.499Z] INFO: Todo deleted {"todoId":"4","userId":3}
+[2026-05-09T21:27:54.946Z] INFO: Todo created {"todoId":6,"userId":3}
+[2026-05-09T21:28:09.760Z] INFO: Todo updated {"todoId":"5","userId":3}
+[2026-05-09T21:28:37.944Z] INFO: Successful login {"userId":3,"username":"p"}
